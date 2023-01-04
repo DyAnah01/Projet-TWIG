@@ -1,0 +1,23 @@
+{% macro input( name,type,placeholder = '',id) %}
+<div class="mb-3">
+    <label for="" class="form-label">{{ titre }}</label>
+    <input type="{{ type }}" name="{{ name }} " placeholder=" {{ placeholder }} " id="{{ id }}" />
+</div>
+{% endmacro %} {# fonction qui prend plusieurs paramètre #}
+
+{% macro textarea( name,type,placeholder = '',id) %}
+<div class="mb-3">
+    
+    <textarea type="{{ type }}" name="{{ name }} " placeholder=" {{ placeholder }} " id="{{ id }}"></textarea>
+</div>
+{% endmacro %}
+
+
+
+{# {% macro input(name, value, type = "text", size = 20) %}
+    <input type="{{ type }}" name="{{ name }}" value="{{ value|e }}" size="{{ size }}"/>
+{% endmacro %}
+
+{% macro textarea(name, value, rows = 10, cols = 40) %}
+    <textarea name="{{ name }}" rows="{{ rows }}" cols="{{ cols }}">{{ value|e }}</textarea>
+{% endmacro %} #}

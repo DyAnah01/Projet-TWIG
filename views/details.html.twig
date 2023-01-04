@@ -1,0 +1,59 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+   Détails
+{% endblock title %} 
+
+
+{# {% block content %}
+
+    <div class="container">
+
+
+        <div class="d-flex flex-row flex-wrap justify-content-center mt-3"> 
+            {% for row in articles %} 
+
+                {% if row.id == id %}
+                        <div class="row justify-content-center">
+                            <div class="col-md-6" >
+                                <img src="{{row.picture}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-md-3 ms-4">
+                                <p>{{ row.content }}</p>
+                                <a href="#" class="btn btn-primary ms-4">{{row.price}}</a>
+                            </div>   
+                        </div>
+
+                {% endif %}
+                
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock content %} #}
+
+
+{% block content %}
+
+    <div class="container">
+
+        {% for row in articles %}
+            {% if row.id == id %}
+                <div class="row g-0 bg-light position-relative">
+                    <div class="col-md-6 mb-md-0 p-md-4">
+                        <img src="{{row.picture}}" class="w-100" alt="...">
+                    </div>
+                    <div class="col-md-6 p-4 ps-md-0">
+                    <h5 class="mt-0">Description</h5>
+                        <p>{{ row.content }}</p>
+                        <p class="">{{row.price}}</p>
+                        <button href="#" class="p-2">Ajouter au panier</button>                       
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+
+{% endblock content %}

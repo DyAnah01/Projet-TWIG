@@ -1,0 +1,41 @@
+MOTEUR DE TEMPLATE TWIG
+
+S'utilise dans les vues, dans le dossier templates/ ou views/.
+Sert a ne plus avoir de code PHP a ecrire directement dans nos vues.
+Un template génère un fichier basé sur du texte (HTML, XML, CSV).
+Twig s'intègre à symfony, et permet d'écrire des templates lisible et concis,
+qui facilite le travail des web designers.
+
+MOTEUR TWIG EST MODERNE POUR PHP 
+Rapide : twig compile les templates en code PHP optimisé.
+Sécurisé : Le code est approuvé en intern et protégé.
+Flexible : Le développeur peut définir tags et ses filtres personnalisés...
+
+CONCURRENTS : Smarty, Blade (utilisé par Laravel)...
+
+{{  }} affiche quelque chose.
+{%  %} faire quelque chose.
+{#  #} n'affiche rien et ne fait rien: c'est la syntaxe pour les commentaires.
+
+FILTRE
+{{ variable|filtre }} : variable correspond a la variable a afficher, et filtre a appliquer 
+{{ name|uper }} : exemple1 : transforme la variable name en majuscule 
+{{ montableau|length }} exemple2 : affiche la taille de la variable 'montableau'
+
+AFFICHER UNE VARIABLE
+
+$foo['bar'] (tableau et son élément (index) )
+$foo->bar (object et sa propriété public)
+$foo->bar() (object et sa méthode public)
+$foo->getBar() (object et sa méthode getter)
+Si rien n'est trouvé, twig retourne un null.
+
+<p>
+    {{ foo.bar }}
+</p>
+
+LA FUNCTION DUMP()
+
+<p>
+    {{ dump(variable) }}
+</p>

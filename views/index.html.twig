@@ -1,0 +1,34 @@
+{% extends "layout.html.twig" %} {# appelé une page #} 
+
+{% block title %}
+    Home 
+{% endblock title %} 
+
+
+{% block content %}
+
+    <div class="container">
+
+        <h1>Page Home</h1>
+        <div class="d-flex flex-row flex-wrap justify-content-center"> 
+            {% for row in articles %} 
+                {% if row.disponible == true %}
+                    <div class="card m-3" style="width: 18rem">
+                        <img src="{{row.picture}}" class="card-img-top" alt="image article" />
+                        <div class="card-body w-100">
+                            <h5 class="card-title">{{ row.name }}</h5>
+                            <p class="card-text">{{ row.content|slice(0, 200) }}</p>
+                            <a href="?page=details&id={{row.id}}">+ details</a>
+                            <a href="#" class="btn btn-primary ms-4">Acheter</a>
+                        </div>
+                    </div>
+                {% endif %}
+                
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock content %}
+
+
